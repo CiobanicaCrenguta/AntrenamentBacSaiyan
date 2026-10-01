@@ -1,7 +1,6 @@
-```text
 <div align="center">
   <h1>ANTRENAMENT SAIYAN BAC</h1>
-  
+
   <p>
     <b>Bac-Saiyan</b> este o aplicație web de tip <b>spaced repetition</b> pentru pregătirea examenului de Bacalaureat la Limba Română — dar nu orice antrenament. Acesta e antrenamentul unui <b>Super Saiyan</b>.
   </p>
@@ -16,7 +15,7 @@
 
 ## Despre proiect
 
-Nu mai memora eseuri la întâmplare. 
+Nu mai memora eseuri la întâmplare.
 
 Aplicația folosește algoritmul **SM-2** (același nucleu folosit de Anki) pentru a-ți prezenta eseurile exact când creierul tău este gata să le uite — maximizând retenția cu efort minim. Fiecare sesiune de studiu este o **luptă**. Fiecare răspuns corect este un **Ki blast**. Fiecare eseu stăpânit este un nou nivel de putere atins.
 
@@ -72,27 +71,25 @@ Aplicația folosește algoritmul **SM-2** (același nucleu folosit de Anki) pent
 ## Rulare locală
 
 ### 1. Clonare repository
-```bash
-git clone <url-repo>
-cd bac-saiyan
 
+```bash
+git clone https://github.com/CiobanicaCrenguta/AntrenamentBacSaiyan.git
+cd AntrenamentBacSaiyan/bac-saiyan
 ```
 
 ### 2. Instalare dependențe
 
 ```bash
 npm install
-
 ```
 
 ### 3. Configurare variabile de mediu
 
-Creează un fișier `.env` în root:
+Creează un fișier `.env` în rădăcina aplicației (lângă `package.json`):
 
 ```env
 DATABASE_URL=postgresql://...       # Conexiunea la Neon DB
 GEMINI_API_KEY=...                  # Cheia API Google Gemini
-
 ```
 
 ### 4. Inițializare bază de date
@@ -101,14 +98,12 @@ Rulează schema SQL în consola Neon sau folosind `psql`:
 
 ```bash
 psql $DATABASE_URL -f schema.sql
-
 ```
 
 ### 5. Pornire antrenament
 
 ```bash
 npm run dev
-
 ```
 
 Deschide `http://localhost:3000` în browser și începe antrenamentul.
@@ -129,15 +124,14 @@ src/
 │   └── SaiyanQuiz.tsx    [ Componenta de quiz interactiv ]
 └── lib/
     └── actions.ts        [ Server actions: DB queries, SM-2 logic ]
-
 ```
 
 ## Algoritmul SM-2
 
 Fiecare eseu primește un **factor de ușurință** și un **interval de repetare** care se ajustează dinamic în funcție de performanța ta în luptă:
 
-* **[ Scor 3 ] Stăpânit** — Intervalul de repetiție crește exponențial.
-* **[ Scor 2 ] Parțial** — Intervalul rămâne același; necesită consolidare.
-* **[ Scor 1 ] Ratat** — Intervalul este resetat la o zi; necesită reînvățare imediată.
+- **[ Scor 3 ] Stăpânit** — Intervalul de repetiție crește exponențial.
+- **[ Scor 2 ] Parțial** — Intervalul rămâne același; necesită consolidare.
+- **[ Scor 1 ] Ratat** — Intervalul este resetat la o zi; necesită reînvățare imediată.
 
 **Traseul evoluției:** `unseen` → `due` → `learning` → `mastered`
