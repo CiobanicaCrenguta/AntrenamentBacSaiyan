@@ -12,7 +12,7 @@
 </div>
 
 <hr>
-
+<a href="https://www.vecteezy.com/vector-art/65440803-vegeta-super-saiyan-blue-close-up-anime-illustration">vegeta-super-saiyan-blue-close-up-anime-illustration Vectors by Vecteezy</a>
 ## Despre proiect
 
 Nu mai memora eseuri la întâmplare.
