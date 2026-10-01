@@ -13,7 +13,7 @@
 
 <hr>
 <p align="center">
-  <img src="Vegeta-Blue-Dragon-Ball-Super-Anime.png" width="700" height="1000">
+  <img src="Vegeta-Blue-Dragon-Ball-Super-Anime.png" width="350" height="500">
 </p>
 ## Despre proiect
 
